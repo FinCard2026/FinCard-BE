@@ -53,4 +53,8 @@ public class User extends BaseEntity {
         if (income != null) this.income = income;
         if (region != null) this.region = region;
     }
+
+    public void addCoin(Long amount) {
+        this.coin += amount;
+    }
 }
