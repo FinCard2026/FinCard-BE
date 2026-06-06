@@ -3,6 +3,8 @@ package com.example.fincard.domain.user.dto.response;
 import com.example.fincard.domain.user.entity.User;
 import lombok.Getter;
 
+import java.util.List;
+
 @Getter
 public class UserMeResponse {
 
@@ -10,9 +12,10 @@ public class UserMeResponse {
     private final String email;
     private final String phoneNumber;
     private final String job;
-    private final Integer age;
-    private final Long income;
+    private final String ageRange;
+    private final String incomeRange;
     private final String region;
+    private final List<String> interests;
     private final Long coin;
 
     public UserMeResponse(User user) {
@@ -20,9 +23,10 @@ public class UserMeResponse {
         this.email = user.getEmail();
         this.phoneNumber = user.getPhoneNumber();
         this.job = user.getJob();
-        this.age = user.getAge();
-        this.income = user.getIncome();
+        this.ageRange = user.getAgeRange();
+        this.incomeRange = user.getIncomeRange();
         this.region = user.getRegion();
+        this.interests = user.getInterests();
         this.coin = user.getCoin();
     }
 }
