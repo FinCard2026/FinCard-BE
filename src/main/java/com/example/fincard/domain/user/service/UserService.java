@@ -21,7 +21,8 @@ public class UserService {
     @Transactional
     public void onboarding(Long userId, OnboardingRequest request) {
         User user = findUser(userId);
-        user.onboarding(request.getJob(), request.getAge(), request.getIncome(), request.getRegion());
+        user.onboarding(request.getJob(), request.getAgeRange(), request.getIncomeRange(), request.getRegion(), request.getInterests());
+        user.addCoin(100L); // 온보딩 완료 보상
     }
 
     @Transactional(readOnly = true)
@@ -32,7 +33,7 @@ public class UserService {
     @Transactional
     public void updateMe(Long userId, UpdateUserRequest request) {
         User user = findUser(userId);
-        user.update(request.getJob(), request.getAge(), request.getIncome(), request.getRegion());
+        user.update(request.getJob(), request.getAgeRange(), request.getIncomeRange(), request.getRegion(), request.getInterests());
     }
 
     @Transactional(readOnly = true)
