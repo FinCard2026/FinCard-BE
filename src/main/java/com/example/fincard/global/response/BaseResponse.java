@@ -1,8 +1,10 @@
 package com.example.fincard.global.response;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Getter;
 
 @Getter
+@JsonPropertyOrder({"success", "message", "data"})
 public class BaseResponse<T> {
 
     private final boolean success;
